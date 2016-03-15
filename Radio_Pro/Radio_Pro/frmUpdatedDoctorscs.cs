@@ -14,7 +14,8 @@ namespace Radio_Pro
     public partial class frmUpdatedDoctorscs : Form
     {
         //for MySQL connection
-        string MyConnectionString = "Server=localhost;Database=radio;Uid=root;Pwd=root;";     
+        //string MyConnectionString = "Server=localhost;Database=radio;Uid=root;Pwd=root;";  
+        Connection_SQL_MySql con_sql_mysql = new Connection_SQL_MySql();
         MySqlDataAdapter mydack;
         DataTable mydt;
         MySqlConnection connect;
@@ -29,28 +30,43 @@ namespace Radio_Pro
         private void btnUpdateClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmManageDoctors dctr = new frmManageDoctors();
-            dctr.Show();
+            //frmManageDoctors dctr = new frmManageDoctors();
+           // dctr.Show();
         }
 
         private void frmUpdatedDoctorscs_Load(object sender, EventArgs e)
         {
-            grdManagesDoctor.ColumnCount = 9;
+            grdManagesDoctor.ColumnCount = 13;
             grdManagesDoctor.Columns[0].Name = "Key";
-            grdManagesDoctor.Columns[1].Name = "Dr Code";
-            grdManagesDoctor.Columns[2].Name = "Dr Name";
-            grdManagesDoctor.Columns[3].Name = "Address";
-            grdManagesDoctor.Columns[4].Name = "Ph Res";
-            grdManagesDoctor.Columns[5].Name = "Ph Off";
-            grdManagesDoctor.Columns[6].Name = "Mobile";
-            grdManagesDoctor.Columns[7].Name = "Primary Contact";
-            grdManagesDoctor.Columns[8].Name = "Secondry Contact";
+            grdManagesDoctor.Columns[1].Name = "Title";
+            grdManagesDoctor.Columns[2].Name = "Dr Code";
+            grdManagesDoctor.Columns[3].Name = "Dr Name";
+            grdManagesDoctor.Columns[4].Name = "Address";
+            grdManagesDoctor.Columns[5].Name = "Ph Res";
+            grdManagesDoctor.Columns[6].Name = "Ph Off";
+            grdManagesDoctor.Columns[7].Name = "Mobile";
+            grdManagesDoctor.Columns[8].Name = "Fax";
+            grdManagesDoctor.Columns[9].Name = "Category";
+            grdManagesDoctor.Columns[10].Name = "Area";
+            grdManagesDoctor.Columns[11].Name = "Primary Contact";
+            grdManagesDoctor.Columns[12].Name = "Secondry Contact";
+
             grdManagesDoctor.Columns[0].Visible = false;
-            
-            connect = new MySqlConnection(MyConnectionString);
+            grdManagesDoctor.Columns[1].ReadOnly = true;
+            grdManagesDoctor.Columns[2].ReadOnly = true;
+            grdManagesDoctor.Columns[3].ReadOnly = true;
+            grdManagesDoctor.Columns[4].ReadOnly = true;
+            grdManagesDoctor.Columns[5].ReadOnly = true;
+            grdManagesDoctor.Columns[6].ReadOnly = true;
+            grdManagesDoctor.Columns[7].ReadOnly = true;
+            grdManagesDoctor.Columns[8].ReadOnly = true;
+            grdManagesDoctor.Columns[9].ReadOnly = true;
+            grdManagesDoctor.Columns[10].ReadOnly = true;
+            string get_Myconn = con_sql_mysql.getConnectionMySql();
+            connect = new MySqlConnection(get_Myconn);
             connect.Open();
             Mycmd = connect.CreateCommand();
-            Mycmd.CommandText = "select * from doct_manage";
+            Mycmd.CommandText = "select * from doctors";
 
             mydack = new MySqlDataAdapter(Mycmd);
             mydt = new DataTable();
@@ -64,7 +80,8 @@ namespace Radio_Pro
                 //row = new string[] { data_decrypt.Decrypt(value[0].ToString()) };
                // MessageBox.Show(value[0].ToString());
                 tbl_id = value[0].ToString();
-                row = new string[] { value[0].ToString(),data_decrypt.Decrypt(value[1].ToString()), data_decrypt.Decrypt(value[2].ToString()), data_decrypt.Decrypt(value[3].ToString()), data_decrypt.Decrypt(value[4].ToString()), data_decrypt.Decrypt(value[5].ToString()), data_decrypt.Decrypt(value[6].ToString()), data_decrypt.Decrypt(value[7].ToString()), data_decrypt.Decrypt(value[8].ToString()) };
+                //row = new string[] { value[0].ToString(),data_decrypt.Decrypt(value[1].ToString()), data_decrypt.Decrypt(value[2].ToString()), data_decrypt.Decrypt(value[3].ToString()), data_decrypt.Decrypt(value[4].ToString()), data_decrypt.Decrypt(value[5].ToString()), data_decrypt.Decrypt(value[6].ToString()), data_decrypt.Decrypt(value[7].ToString()), data_decrypt.Decrypt(value[8].ToString()) };
+                row = new string[] { value[0].ToString(), (value[1].ToString()), (value[2].ToString()), (value[3].ToString()), (value[4].ToString()), (value[5].ToString()), (value[6].ToString()), (value[7].ToString()), (value[8].ToString()), (value[9].ToString()), (value[10].ToString()), (value[11].ToString()), (value[12].ToString()) };
                 /*row = new string[] { data_decrypt.Decrypt(value[0].ToString()), data_decrypt.Decrypt(value[1].ToString()), data_decrypt.Decrypt(value[2].ToString()), data_decrypt.Decrypt(value[3].ToString()), data_decrypt.Decrypt(value[4].ToString())
                     , data_decrypt.Decrypt(value[5].ToString()), data_decrypt.Decrypt(value[6].ToString()), data_decrypt.Decrypt(value[7].ToString()) };*/
                 grdManagesDoctor.Rows.Add(row);
@@ -78,19 +95,38 @@ namespace Radio_Pro
             i = grdManagesDoctor.CurrentCell.RowIndex;
             DataGridViewRow row = grdManagesDoctor.Rows[i];
             string tbl_id = (row.Cells[0].Value ?? string.Empty).ToString(); 
-            string dr_compulsry = (row.Cells[7].Value ?? string.Empty).ToString();
-            string dr_primary = (row.Cells[8].Value ?? string.Empty).ToString();
+            string dr_compulsry = (row.Cells[11].Value ?? string.Empty).ToString();
+            string dr_primary = (row.Cells[12].Value ?? string.Empty).ToString();
             //MessageBox.Show(tbl_id);
             Mycmd = connect.CreateCommand();
             if (dr_compulsry != "" && dr_primary != "")
             {
-                dr_compulsry = data_en.Encrypt(dr_compulsry);
-                dr_primary = data_en.Encrypt(dr_primary);
-                Mycmd.CommandText = "update doct_manage set Primary_contc='" + dr_compulsry + "',Sec_contc='" + dr_primary + "' where tbl_id='" + tbl_id + "'";
-                Mycmd.ExecuteNonQuery();
+                    int j;
+                    if (!int.TryParse(Convert.ToString(dr_compulsry), out j))
+                    {
+                       
+                       MessageBox.Show("Please enter numeric");
+                    }
+                    else if (!int.TryParse(Convert.ToString(dr_primary), out j))
+                    {
+                        MessageBox.Show("Please enter numeric");
+                    }
+                    else
+                    {
+                        //dr_compulsry = data_en.Encrypt(dr_compulsry);
+                        //dr_primary = data_en.Encrypt(dr_primary);
+                        Mycmd.CommandText = "update doctors set alternateMobile1='" + dr_compulsry + "',alternateMobile2='" + dr_primary + "' where doctorId='" + tbl_id + "'";
+                        //INSERT INTO doctors(radioTitle,radioDoctorId,radioName,radioAddress,radioPhoneRes,radioPhoneOffice,radioPhoneMobile,radioFax,radioCategory,areaId,alternateMobile1,alternateMobile2) values('" + (row1[0].ToString()) + "','" + (row1[1].ToString()) + "','" + value + "','" + (row1[3].ToString()) + "','" + (row1[4].ToString()) + "','" + (row1[5].ToString()) + "','" + (row1[6].ToString()) + "','" + (row1[7].ToString()) + "','" + (row1[8].ToString()) + "','" + (row1[9].ToString()) + "','0000000000','0000000000')";
+                        Mycmd.ExecuteNonQuery();
 
-                MessageBox.Show("Excecuted successfully ..!");
-            }            
+                        MessageBox.Show("Update successfully ..!");
+                    }
+                    
+                }
+               
+            } 
+           
         }
-    }
+        
 }
+

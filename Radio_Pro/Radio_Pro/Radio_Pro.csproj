@@ -52,6 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCBoxItem.cs" />
+    <Compile Include="CheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckedComboBox.Designer.cs">
+      <DependentUpon>CheckedComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection_SQL_MySql.cs" />
     <Compile Include="Data_Decryptioncs.cs" />
     <Compile Include="Data_Encryption.cs" />
     <Compile Include="Form1.cs">
@@ -59,6 +67,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAssignData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignData.Designer.cs">
+      <DependentUpon>frmAssignData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFetchData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFetchData.Designer.cs">
+      <DependentUpon>frmFetchData.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogincs.cs">
       <SubType>Form</SubType>
@@ -72,11 +92,23 @@
     <Compile Include="frmManageDoctors.Designer.cs">
       <DependentUpon>frmManageDoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMangeUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMangeUsers.Designer.cs">
+      <DependentUpon>frmMangeUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRadioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRadioDesktop.Designer.cs">
       <DependentUpon>frmRadioDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSele_Area_Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSele_Area_Doctor.Designer.cs">
+      <DependentUpon>frmSele_Area_Doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUpdatedDoctorscs.cs">
       <SubType>Form</SubType>
@@ -95,14 +127,26 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAssignData.resx">
+      <DependentUpon>frmAssignData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFetchData.resx">
+      <DependentUpon>frmFetchData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogincs.resx">
       <DependentUpon>frmLogincs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageDoctors.resx">
       <DependentUpon>frmManageDoctors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMangeUsers.resx">
+      <DependentUpon>frmMangeUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRadioDesktop.resx">
       <DependentUpon>frmRadioDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSele_Area_Doctor.resx">
+      <DependentUpon>frmSele_Area_Doctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdatedDoctorscs.resx">
       <DependentUpon>frmUpdatedDoctorscs.cs</DependentUpon>

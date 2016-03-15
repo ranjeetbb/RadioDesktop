@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace Radio_Pro
 {
     public partial class frmRadioDesktop : Form
@@ -23,7 +23,7 @@ namespace Radio_Pro
 
         private void fetchRecordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var pullData = new Form1();
+            var pullData = new frmFetchData();
             pullData.Show();
         }
 
@@ -36,6 +36,34 @@ namespace Radio_Pro
         {
             frmUpdatedDoctorscs updr = new frmUpdatedDoctorscs();
             updr.Show();
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMangeUsers maguser = new frmMangeUsers();
+            maguser.Show();
+        }
+
+        private void trackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            //ProcessStartInfo sInfo = new ProcessStartInfo("chrome.exe", "http://localhost/Test_Local_Server_Db/getelement.php");
+            //Process.Start(sInfo);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmAssignData data = new frmAssignData();
+            data.Show();
         }
     }
 }

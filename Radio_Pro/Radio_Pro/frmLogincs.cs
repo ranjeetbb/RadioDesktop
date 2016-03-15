@@ -11,7 +11,8 @@ namespace Radio_Pro
 {
     public partial class frmLogincs : Form
     {
-        string MyConnectionString = "Server=localhost;Database=radio;Uid=root;Pwd=root;";
+        //string MyConnectionString = "Server=localhost;Database=radio;Uid=root;Pwd=root;";
+        Connection_SQL_MySql con_sql_mysql = new Connection_SQL_MySql();
         public frmLogincs()
         {
             InitializeComponent();
@@ -31,7 +32,8 @@ namespace Radio_Pro
             }
             else
             {
-                MySqlConnection connect = new MySqlConnection(MyConnectionString);
+                string get_Myconn = con_sql_mysql.getConnectionMySql();
+                MySqlConnection connect = new MySqlConnection(get_Myconn);
                 MySqlCommand cmd;
                 connect.Open();
                 cmd = connect.CreateCommand();

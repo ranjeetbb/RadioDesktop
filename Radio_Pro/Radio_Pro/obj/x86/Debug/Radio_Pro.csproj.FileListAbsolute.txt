@@ -11,3 +11,7 @@ D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.csprojResolveAssemblyRefere
 D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmManageDoctors.resources
 D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmUpdatedDoctorscs.resources
 D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.splash.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmFetchData.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmMangeUsers.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmAssignData.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmSele_Area_Doctor.resources

@@ -16,6 +16,7 @@ namespace Radio_Pro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmUpdatedDoctorscs());
+            //Application.Run(new frmRadioDesktop());
             Application.Run(new splash());
         }
     }

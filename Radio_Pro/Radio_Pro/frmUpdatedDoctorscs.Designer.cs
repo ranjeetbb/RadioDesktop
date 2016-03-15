@@ -42,7 +42,7 @@
             this.grdManagesDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdManagesDoctor.Location = new System.Drawing.Point(41, 73);
             this.grdManagesDoctor.Name = "grdManagesDoctor";
-            this.grdManagesDoctor.Size = new System.Drawing.Size(966, 178);
+            this.grdManagesDoctor.Size = new System.Drawing.Size(1046, 178);
             this.grdManagesDoctor.TabIndex = 4;
             // 
             // label1
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 342);
+            this.ClientSize = new System.Drawing.Size(1099, 342);
             this.Controls.Add(this.btnUpdateContact);
             this.Controls.Add(this.btnUpdateClose);
             this.Controls.Add(this.label1);

@@ -183,6 +183,11 @@ namespace Radio_Pro
  
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     
     }
 }

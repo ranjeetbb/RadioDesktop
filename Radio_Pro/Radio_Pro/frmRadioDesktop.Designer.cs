@@ -37,9 +37,13 @@
             this.manageDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageDoctorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageResponsedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trackUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageResponsedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +54,9 @@
             this.createLoginToolStripMenuItem,
             this.recordToolStripMenuItem,
             this.manageDoctorToolStripMenuItem,
-            this.trackToolStripMenuItem});
+            this.trackToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem3});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
@@ -114,6 +120,13 @@
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
+            // 
+            // manageResponsedToolStripMenuItem
+            // 
+            this.manageResponsedToolStripMenuItem.Name = "manageResponsedToolStripMenuItem";
+            this.manageResponsedToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.manageResponsedToolStripMenuItem.Text = "Manage Responses";
             // 
             // trackToolStripMenuItem
             // 
@@ -123,6 +136,7 @@
             this.trackToolStripMenuItem.Name = "trackToolStripMenuItem";
             this.trackToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.trackToolStripMenuItem.Text = "Track";
+            this.trackToolStripMenuItem.Click += new System.EventHandler(this.trackToolStripMenuItem_Click);
             // 
             // trackUsersToolStripMenuItem
             // 
@@ -131,11 +145,40 @@
             this.trackUsersToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.trackUsersToolStripMenuItem.Text = "Track Users";
             // 
-            // manageResponsedToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.manageResponsedToolStripMenuItem.Name = "manageResponsedToolStripMenuItem";
-            this.manageResponsedToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
-            this.manageResponsedToolStripMenuItem.Text = "Manage Responses";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(54, 23);
+            this.toolStripMenuItem1.Text = "Start";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(160, 24);
+            this.toolStripMenuItem2.Text = "Start Server";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4});
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(54, 23);
+            this.toolStripMenuItem3.Text = "Data";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(192, 24);
+            this.toolStripMenuItem4.Text = "Data Assignment";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // frmRadioDesktop
             // 
@@ -146,7 +189,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmRadioDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "RadioDesktop";
@@ -172,5 +215,9 @@
         private System.Windows.Forms.ToolStripMenuItem manageResponsedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trackUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }
