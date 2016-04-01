@@ -1,0 +1,17 @@
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.Form1.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmLogincs.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.Properties.Resources.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.csproj.GenerateResource.Cache
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmRadioDesktop.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.csprojResolveAssemblyReference.cache
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmManageDoctors.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmUpdatedDoctorscs.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.splash.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmFetchData.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmMangeUsers.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmAssignData.resources
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\Radio_Pro.frmTrackUsers.resources
+D:\Radio\Radio_Pro\Radio_Pro\bin\Debug\ManageApp.exe
+D:\Radio\Radio_Pro\Radio_Pro\bin\Debug\ManageApp.pdb
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\ManageApp.exe
+D:\Radio\Radio_Pro\Radio_Pro\obj\x86\Debug\ManageApp.pdb
