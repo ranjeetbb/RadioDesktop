@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JSON </title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                alert("1");
+               $("#btnLogin").click(function(){
+                   alert("2");
+                  $.ajax({
+					  url:"http://radio.tekticks.co.in/radioJson/api.php",
+					  //url:"api.php",
+                      type:"GET",
+                      dataType:"json",
+                      data:{type:"login", Mobile:"swapnil",Password:"58522"},
+                      ContentType:"application/json",
+                      success: function(response){
+                          alert(JSON.stringify(response));
+                      },
+                      error: function(err){
+                          alert(JSON.stringify(err));
+                      }
+                  })
+               }); 
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btnLogin" name="btnLogin" value="Login"/>
+    </body>
+</html>
