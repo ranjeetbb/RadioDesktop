@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Patient</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery-csv-master/src/jquery-csv.js"></script>
+<script type="text/javascript" src="js/patient.js"></script> 
+</head>
+<body>
+
+<p id="demo"></p>
+<a href="#" class="button button-fill button-raised color-green" onclick="addPatient()">add</a>
+<script>
+
+
+$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "pt.csv",
+        dataType: "text",
+        success: function(data) {processData(data);}
+     });
+});
+
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+
+    for (var i=1; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+
+            var tarr = [];
+            for (var j=0; j<headers.length; j++) {
+                tarr.push(headers[j]+":"+data[j]);
+            }
+            lines.push(tarr);
+        }
+    }
+     //alert(lines);
+	  lines.toString();
+	document.getElementById("demo").innerHTML = lines;
+}
+
+localStorage.setItem("lines",lines);
+
+
+/*$.ajax({
+    url: "pt.csv",
+    async: false,
+    success: function (csvd) {
+       var data = $.csv.toArrays(csvd);
+		
+    },
+    dataType: "text",
+    complete: function () {
+       
+    }
+});*/
+
+
+</script>
+</body>
+</html>
